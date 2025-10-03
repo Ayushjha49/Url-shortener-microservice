@@ -20,7 +20,7 @@ app.get('/', function (req, res) {
   res.sendFile(process.cwd() + '/views/index.html');
 });
 
-// Your first API endpoint
+// My first API endpoint
 app.get('/api/hello', function (req, res) {
   res.json({ greeting: 'hello API' });
 });
@@ -39,7 +39,7 @@ app.post('/api/shorturl', (req, res) => {
     return res.json({ error: 'invalid url' });
   }
 
-  // Check if hostname is real
+  // Checking if hostname is real
   dns.lookup(parsedUrl.hostname, (err) => {
     if (err) {
       return res.json({ error: 'invalid url' });
